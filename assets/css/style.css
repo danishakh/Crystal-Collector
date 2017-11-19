@@ -1,0 +1,40 @@
+#panel-crystal {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.info-wrapper {
+	font-size: 25px;
+}
+
+.crystal {
+	width: 140px;
+	height: 140px;
+	border: none;
+}
+
+#logo-img {
+	width: 170px;
+	height: 170px;
+	border: none;
+	position: absolute;
+	left: 25%;
+}
+
+.title {
+	font-family: 'Kaushan Script', cursive;
+	font-size: 90px;
+}
+
+.panel, .panel-body, .panel-title, .stats-panel, .score-panel {
+	font-family: 'Kaushan Script', cursive;
+}
+
+.stats-panel, .score-panel {
+	font-size: 30px;
+}
+
+.mytitle {
+	font-size: 25px;
+}

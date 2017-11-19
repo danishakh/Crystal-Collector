@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Crystal Collector</title>
+
+	<!-- jQuery CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Reset CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!-- My CSS file -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- Bootstrap CSS -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  	<!-- Bootswatch Cyborg -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Shadows+Into+Light" rel="stylesheet">
+
+</head>
+<body>
+	<div class="wrapper">
+		<img id="logo-img" src="https://media.giphy.com/media/twfl6QdDg2ZA4/giphy.gif">
+		<div id="header-wrapper" class="header-container container-fluid col-lg-6 col-lg-offset-3 text-center">
+			<h1 class="title">CRYSTAL COLLECTOR</h1>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<div class="info-wrapper panel panel-default">
+					<div class="panel-body text-center">
+						<p>Welcome to cystal collector! You will be given a random number every round. Your goal is to get your total score to match the random number to win the round. If you exceed the random number, you lose!</p>
+					
+						<p>There are 4 different crystals, each with a different value that will be randomly assigned to them at the start of the round. Select the appropriate crystals to add your total score to the random numner</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-2">
+				<div class="score-panel panel panel-default">
+					<div class="panel-body">
+						<span id="target"></span><br>
+						<span id="score"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-lg-offset-1">
+				<div id="panel-crystals" class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="mytitle text-center">Available Crystals</div>
+					</div>
+					<div id="panel-crystal" class="panel-body"></div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-lg-offset-1">
+				<div class="stats-panel panel panel-default">
+					<div class="panel-body">
+						<span id="wins"></span><br>
+						<span id="losses"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	
+	<!-- end of wrapper -->
+	</div>
+
+		<!-- game.js -->
+	<script type="text/javascript" src="assets/js/game.js"></script>
+</body>
+</html>
