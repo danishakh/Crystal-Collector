@@ -13,6 +13,7 @@
 // reset -> new random target, and each crystal has a random value
 
 
+
 // Counters
 var wins = 0;
 var losses = 0;
@@ -61,18 +62,32 @@ function startGame() {
 
 	console.log('New Round!');
 
+	// Highlight on mouseover
+	$(".crystal").on("mouseover", function() {
+		$(this).css("border", "2px solid #4D9ED1");
+		//console.log('haha');
+	});
+
+	// Remove highlight on mouseout
+	$(".crystal").on("mouseout", function() {
+		$(this).css("border", "0px");
+		//console.log('haha');
+	});
+
 	$(".crystal").on('click', function() {
 
-	// get the value of the crystal that was clicked and convert it to an int
-	var crystalVal = parseInt($(this).attr("data-value"));
+		playClickSound();
 
-	// add value to the total score
-	score += crystalVal;
+		// get the value of the crystal that was clicked and convert it to an int
+		var crystalVal = parseInt($(this).attr("data-value"));
 
-	// Update score
-	$("#score").html("Score: " + score);
+		// add value to the total score
+		score += crystalVal;
 
-	checkResult();
+		// Update score
+		$("#score").html("Score: " + score);
+
+		checkResult();
 	});
 }
 
@@ -87,12 +102,14 @@ function resetGame() {
 // Check to see if player won or lost
 function checkResult() {
 	if (score > target) {
+		playLossSound();
 		losses++;
 		$("#losses").html("Losses: " + losses);
 		console.log("you just lost, time to reset");
 		resetGame();
 	}
 	else if (score === target){
+		playWinSound();
 		wins++;
 		$("#wins").html("Wins: " + wins);
 		console.log("you won, time to reset");
@@ -100,4 +117,51 @@ function checkResult() {
 	}
 }
 
+
+function playClickSound() {
+	var mySound = document.createElement("audio");
+	mySound.src = "assets/audio/ting.mp3";
+	mySound.volume = 0.5;
+	mySound.autoPlay = false;
+	mySound.preLoad = true;
+
+	if (mySound.paused) {
+		mySound.play();
+	} 
+	else {
+		mySound.currentTime = 0;
+	}
+}
+
+function playWinSound() {
+	var winSound = document.createElement("audio");
+	winSound.src = "assets/audio/tada.mp3";
+	winSound.volume = 0.5;
+	winSound.autoPlay = false;
+	winSound.preLoad = true;
+
+	winSound.play();
+}
+
+function playLossSound() {
+	var lossSound = document.createElement("audio");
+	lossSound.src = "assets/audio/sad.mp3";
+	lossSound.volume = 0.4;
+	lossSound.autoPlay = false;
+	lossSound.preLoad = true;
+
+	lossSound.play();
+}
+
+
+
 startGame();
+
+
+
+
+
+
+
+
+
